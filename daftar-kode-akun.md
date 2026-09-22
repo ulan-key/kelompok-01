@@ -11,6 +11,7 @@ Daftar ini menjadi rujukan saat mencatat transaksi pada berkas `jurnal-umum.csv`
 | 5204 | Beban Pengiriman Dokumen |
 | 5205 | Beban Fotokopi dan Penggandaan |
 | 5210 | Beban Transportasi dan Parkir |
+| 1000 | wowowowowowow |
 
 ## Cara mencatat
 
