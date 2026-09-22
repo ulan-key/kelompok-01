@@ -1,0 +1,14 @@
+Tanggal,Kode Akun,Keterangan,Debit,Kredit
+2026-09-01,1101,Pengisian kembali kas kecil,500000,0
+2026-09-02,5201,Pembelian alat tulis kantor,85000,0
+2026-09-02,1101,Pembayaran alat tulis kantor,0,85000
+2026-09-04,5203,Biaya konsumsi rapat bagian keuangan,120000,0
+2026-09-04,1101,Pembayaran konsumsi rapat,0,120000
+2026-09-08,5201,Biaya fotokopi berkas audit,45000,0
+2026-09-08,1101,Pembayaran fotokopi berkas audit,0,45000
+2026-09-11,5210,Biaya parkir dan transportasi kurir,60000,0
+2026-09-11,1101,Pembayaran transportasi kurir,0,60000
+2026-09-15,5202,Pembelian materai dan perangko,90000,0
+2026-09-15,1101,Pembayaran materai dan perangko,0,90000
+2026-09-19,5204,Biaya pengiriman dokumen pajak,75000,0
+2026-09-19,1101,Pembayaran pengiriman dokumen,0,75000

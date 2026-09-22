@@ -1,0 +1,40 @@
+' Makro rekap kas kecil bulanan
+' Menjumlahkan kolom Debit dan Kredit dari sheet "Jurnal"
+' lalu menuliskan hasilnya ke sheet "Rekap".
+
+Sub RekapKasKecil()
+
+    Dim wsJurnal As Worksheet
+    Dim wsRekap As Worksheet
+    Dim barisTerakhir As Long
+    Dim i As Long
+    Dim totalDebit As Double
+    Dim totalKredit As Double
+
+    Set wsJurnal = ThisWorkbook.Sheets("Jurnal")
+    Set wsRekap = ThisWorkbook.Sheets("Rekap")
+
+    barisTerakhir = wsJurnal.Cells(wsJurnal.Rows.Count, 1).End(xlUp).Row
+
+    totalDebit = 0
+    totalKredit = 0
+
+    For i = 2 To barisTerakhir
+        totalDebit = totalDebit + wsJurnal.Cells(i, 4).Value
+        totalKredit = totalKredit + wsJurnal.Cells(i, 5).Value
+    Next i
+
+    wsRekap.Range("A1").Value = "Total Debit"
+    wsRekap.Range("B1").Value = totalDebit
+    wsRekap.Range("A2").Value = "Total Kredit"
+    wsRekap.Range("B2").Value = totalKredit
+    wsRekap.Range("A3").Value = "Selisih"
+    wsRekap.Range("B3").Value = totalDebit - totalKredit
+
+    If totalDebit = totalKredit Then
+        MsgBox "Jurnal seimbang. Rekap selesai dibuat.", vbInformation
+    Else
+        MsgBox "Jurnal tidak seimbang. Periksa kembali pencatatan.", vbExclamation
+    End If
+
+End Sub

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  ============================================================
+  CARA MENGEDIT HALAMAN INI
+
+  Cari tulisan GANTI di bawah. Hanya bagian itu yang perlu
+  diubah. Tulisan yang diapit tanda kurung siku dengan tanda
+  seru adalah catatan, tidak ikut tampil di halaman.
+
+  Jangan ubah bagian <style> kecuali sudah paham CSS.
+  Kalau halaman jadi berantakan, buka tab History di repo
+  lalu kembalikan ke versi sebelumnya.
+  ============================================================
+-->
+
+<!-- GANTI: nama kamu -->
+<title>Nama Lengkap Kamu</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --deep:   #12231a;
+    --deep-2: #1d3428;
+    --paper:  #f1f5ee;
+    --card:   #ffffff;
+    --rule:   #cfdcd2;
+    --ink:    #12231a;
+    --soft:   #5f7167;
+    --mark:   #b8452f;
+    --mint:   #9ec2a9;
+    --serif:  "Newsreader", Georgia, "Times New Roman", serif;
+    --sans:   "Karla", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px 72px; }
+
+  /* ---------------- kepala halaman ---------------- */
+
+  .hero {
+    position: relative;
+    background: var(--deep);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0, transparent 37px,
+      rgba(158,194,169,.13) 37px, rgba(158,194,169,.13) 38px
+    );
+    color: var(--paper);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 10px;
+    background: var(--mark);
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 76px 20px 64px 38px;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(38px, 8vw, 68px);
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    margin: 0 0 10px;
+  }
+
+  .role {
+    color: var(--mint);
+    font-size: clamp(16px, 2.2vw, 19px);
+    margin: 0;
+    max-width: 34em;
+  }
+
+  .hero-line {
+    width: 74px;
+    height: 3px;
+    background: var(--mark);
+    margin: 26px 0 0;
+  }
+
+  /* ---------------- kartu data ---------------- */
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 6px 22px;
+    margin-top: -34px;
+    position: relative;
+    box-shadow: 0 1px 0 rgba(18,35,26,.04);
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .row:last-child { border-bottom: 0; }
+
+  .row dt { color: var(--soft); font-size: 15px; flex: 0 0 auto; }
+
+  .row dd {
+    margin: 0;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+  }
+
+  /* ---------------- bagian isi ---------------- */
+
+  section { margin-top: 46px; }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 18px;
+    padding-left: 15px;
+    border-left: 4px solid var(--mark);
+    line-height: 1.25;
+  }
+
+  p { margin: 0 0 14px; }
+  .lead { font-size: 17.5px; max-width: 62ch; }
+
+  /* ---------------- pengalaman ---------------- */
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+  }
+  .item:last-child { margin-bottom: 0; }
+
+  .item h3 {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .meta {
+    color: var(--mark);
+    font-size: 14px;
+    font-weight: 700;
+    margin: 4px 0 8px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .item p { margin: 0; color: #35473c; }
+
+  /* ---------------- kemampuan ---------------- */
+
+  .tags { display: flex; flex-wrap: wrap; gap: 9px; padding: 0; margin: 0; list-style: none; }
+
+  .tags li {
+    background: var(--deep);
+    color: var(--paper);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+
+  /* ---------------- kontak ---------------- */
+
+  .contact { background: var(--deep); border: 0; border-radius: 4px; padding: 6px 22px; margin-top: 0; box-shadow: none; }
+  .contact .row { border-bottom-color: rgba(158,194,169,.22); }
+  .contact .row dt { color: var(--mint); }
+  .contact .row dd { color: var(--paper); }
+
+  a { color: inherit; text-decoration-color: var(--mark); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  a:hover { color: var(--mint); }
+  a:focus-visible { outline: 2px solid var(--mark); outline-offset: 3px; border-radius: 2px; }
+
+  footer {
+    margin-top: 46px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    color: var(--soft);
+    font-size: 14px;
+  }
+
+  @media (max-width: 560px) {
+    .hero-inner { padding: 54px 18px 48px 30px; }
+    .card { padding: 4px 16px; margin-top: -26px; }
+    .row { flex-direction: column; gap: 0; padding: 9px 0; }
+    .row dd { text-align: left; }
+    .contact { padding: 4px 16px; margin-top: 0; }
+    .item { padding: 16px 18px; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .hero { background: #fff; color: #12231a; background-image: none; }
+    .role { color: #5f7167; }
+    .tags li { background: #fff; color: #12231a; border: 1px solid #cfdcd2; }
+    .contact { background: #fff; border: 1px solid #cfdcd2; }
+    .contact dt { color: #5f7167; }
+    .contact dd { color: #12231a; }
+    .card, .item { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <!-- GANTI: nama lengkap kamu -->
+    <h1>Nama Lengkap Kamu</h1>
+
+    <!-- GANTI: program studi dan kampus -->
+    <p class="role">Mahasiswa Komputerisasi Akuntansi, Universitas Komputer Indonesia</p>
+
+    <div class="hero-line"></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- GANTI: isi setelah <dd> dengan data kamu.
+       Mau menambah baris? Salin satu blok <div class="row"> lalu ubah isinya. -->
+  <dl class="card">
+    <div class="row">
+      <dt>NIM</dt>
+      <dd>11122001</dd>
+    </div>
+    <div class="row">
+      <dt>Angkatan</dt>
+      <dd>2022</dd>
+    </div>
+    <div class="row">
+      <dt>Domisili</dt>
+      <dd>Bandung</dd>
+    </div>
+    <div class="row">
+      <dt>Email</dt>
+      <dd>email@kamu.com</dd>
+    </div>
+  </dl>
+
+  <section>
+    <h2>Tentang saya</h2>
+    <!-- GANTI: dua sampai tiga kalimat. Tulis apa yang kamu bisa dan
+         sedang pelajari, bukan sifat seperti rajin atau pekerja keras. -->
+    <p class="lead">
+      Mahasiswa semester lima yang tertarik pada pencatatan keuangan berbasis sistem.
+      Terbiasa mengolah data transaksi dengan Excel dan menyusun laporan keuangan sederhana,
+      serta sedang mempelajari SQL untuk menarik data dari basis data.
+    </p>
+  </section>
+
+  <section>
+    <h2>Kemampuan</h2>
+    <!-- GANTI: tambah atau hapus <li> sesuai kemampuan kamu -->
+    <ul class="tags">
+      <li>Microsoft Excel</li>
+      <li>Lookup dan pivot table</li>
+      <li>Jurnal dan laporan keuangan</li>
+      <li>Zahir Accounting</li>
+      <li>MYOB</li>
+      <li>SQL dasar</li>
+      <li>GitHub</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Pengalaman</h2>
+
+    <!-- GANTI: satu blok untuk satu pengalaman.
+         Salin seluruh blok <div class="item"> kalau mau menambah. -->
+    <div class="item">
+      <h3>Bendahara Himpunan Mahasiswa Komputerisasi Akuntansi</h3>
+      <p class="meta">2025 sampai sekarang</p>
+      <p>Menyusun laporan pemasukan dan pengeluaran kegiatan himpunan, serta merekap pertanggungjawaban dana tiap acara.</p>
+    </div>
+
+    <div class="item">
+      <h3>Peserta Pelatihan GitHub, Ruang Kreatif HIMA KA</h3>
+      <p class="meta">September 2026</p>
+      <p>Mempelajari pencatatan riwayat perubahan berkas dan kolaborasi dokumen menggunakan GitHub.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pendidikan</h2>
+
+    <!-- GANTI: riwayat pendidikan kamu -->
+    <div class="item">
+      <h3>Universitas Komputer Indonesia</h3>
+      <p class="meta">Komputerisasi Akuntansi, 2022 sampai sekarang</p>
+      <p>Mata kuliah yang diminati: sistem informasi akuntansi, akuntansi biaya, dan pengolahan data keuangan.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Kontak</h2>
+    <!-- GANTI: username dan alamat kamu. Bagian setelah href= juga ikut diganti. -->
+    <dl class="card contact">
+      <div class="row">
+        <dt>GitHub</dt>
+        <dd><a href="https://github.com/namaakunkamu">github.com/namaakunkamu</a></dd>
+      </div>
+      <div class="row">
+        <dt>Email</dt>
+        <dd><a href="mailto:email@kamu.com">email@kamu.com</a></dd>
+      </div>
+      <div class="row">
+        <dt>Instagram</dt>
+        <dd><a href="https://instagram.com/akunkamu">@akunkamu</a></dd>
+      </div>
+    </dl>
+  </section>
+
+  <footer>
+    Dibuat saat Pelatihan GitHub, Ruang Kreatif HIMA KA UNIKOM, September 2026.
+  </footer>
+
+</div>
+
+</body>
+</html>
